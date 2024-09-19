@@ -1,0 +1,16 @@
+h3 { 
+    font-family:sans-serif;
+    color: #936df9;
+    background-color: rgb(109, 238, 249);
+
+}
+
+p {
+    color: rgb(0, 38, 255);
+    border: 6px double #ec00ff;
+}
+
+* {
+    background-color: #e686f7;  
+    border: 10px dotted;
+}
