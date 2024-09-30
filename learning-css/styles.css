@@ -14,3 +14,19 @@ p {
     background-color: #e686f7;  
     border: 10px dotted;
 }
+
+.alert
+    { 
+    color:red;
+    font-weight: 400;
+    font-size: 32px
+}
+
+#para-2 {
+    color: green;
+    border: soild 6px red;
+}
+
+#practice {
+    color
+}
