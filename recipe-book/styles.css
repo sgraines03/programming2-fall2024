@@ -6,15 +6,19 @@
 .recipes{
     background-color: antiquewhite; 
     font-family: cursive;
+    color: black;
 
 }
 
-.title{
+h1{
     text-align: center;
+    font-weight: 3000;
 
 }
 #cookie {
     width: 300px;
+    height: 300px;
+    
 }
 .button{
     font-size: 20px;
@@ -26,4 +30,5 @@
     padding: 10px; 
     border: solid 5px; 
     font-family: cursive;
+    color: black;
 }
