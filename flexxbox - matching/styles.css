@@ -1,0 +1,114 @@
+#body {
+	margin: 0;
+	background: #eee;
+	font-family: Besley, serif;
+	height: 100vh;
+	overflow: hidden;
+	overflow-y: scroll;
+
+}
+
+.column-cards {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
+	background-color: lightgray;
+	border-radius: 5px;
+	text-align: center;
+	margin: 2px;
+	flex-shrink: 2;
+	flex-grow: 1;
+	flex-basis: 50px;
+	
+}
+
+.column-cards:hover {
+	background-color: darkgray;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	flex-grow: 1;
+	/*flex-basis: 0;*/
+	width: 100%;
+	height: calc(100vh - 90px);
+}
+
+#header {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: center;
+	margin: 0;
+}
+
+#flex-container {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-between;
+	border: red 3px solid;
+	height: 90%;
+	width: 100%;
+    gap: 5px;
+	flex-shrink: 2;
+	flex-grow: 1;
+}
+
+#exitbutton {
+	background-color: red;
+	border-radius: 5px;
+}
+
+#exitbutton:hover {
+	background-color: darkred;
+}
+
+
+#startbutton{
+	background-color: lawngreen;
+	display: flex;
+	border-radius: 15px;
+	height: fit-content;
+	width: 70%;
+	align-items: center;
+	justify-content: space-evenly;
+	font-size: 250%;
+	flex-shrink: 2;
+	flex-grow: 1;
+
+}
+
+#startwords {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 300%;
+  flex-shrink: 2;
+  flex-grow: 1;
+
+}
+
+#body2 {
+    margin: 0;
+    background: #eee;
+    font-family: Besley, serif;
+    overflow: hidden;
+}
+
+
+#startbutton:hover {background-color: #00f009}
+
+
+.contentofcards{
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	justify-content: center;
+	flex-shrink: 2;
+	flex-grow: 1;
+}
