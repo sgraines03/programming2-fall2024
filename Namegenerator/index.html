@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>name generator</title>
+		<script src="script.js"></script>
+    </head>
+    <body>
+		<h2>Generate your mystical name</h2>
+		<label for="birthmonth">Choose your birthmonth:</label>
+		<select name="birthmonth" id="birthmonth">
+			<option value="j">January</option>
+			<option value="f">February</option>
+			<option value="ma">March</option>
+			<option value="a">April</option>
+			<option value="may">May</option>
+			<option value="june">June</option>
+			<option value="july">July</option>
+			<option value="au">August</option>
+			<option value="s">September</option>
+			<option value="o">October</option>
+			<option value="n">November</option>
+			<option value="d">December</option>
+		</select>	
+		
+		<label for="favNum">Favorite Number: </label>
+		<input type="number" id= "favNum" placeholder="favorite number here"/>
+		
+		<label for="firstLetter">First letter of your first name: </label>
+		<input type="text" id= "firstLetter" placeholder="first letter here"/>
+		 
+		<button onclick=generate()>Generate</button>
+		
+		<p id = yourName></p>
+	</body>
+</html>
+
+

@@ -37,31 +37,25 @@
 //	alert("consult your local meteorologest");
 //}
 
+const username = "SadieGraines";
+const password = "parker2027";
+
+
 function login() {
-	let username = "SadieGraines";
-	let password = "parker2027";
-	
-	if (document.getElementById("username").innerText != username && document.getElementById("password").innerText != password){
-		document.getElementById("upwrong").style.display = "block";
-		document.getElementById("upwrong").style.color = "red";
-
-
-	} else if(document.getElementById("username").innerText != username ){
-		document.getElementById("uwrong").style.display = "block";
-		document.getElementById("uwrong").style.color = "red";
-
-
-
-	} else if(document.getElementById("password").innerText != password) {
-		document.getElementById("pwrong").style.display = "block";
-		document.getElementById("pwrong").style.color = "red";
-
-		
-
+	let u = document.getElementById("username").value;
+	let p = document.getElementById("password").value;
+	let message = document.getElementById("yourMessage");
+	if (u == username && p == password){
+		message.innerText = "Logged in!!";
+		message.style.color = "green";
+	} else if(u == username && p != password ){
+		message.innerText = "Password is wrong.";
+		message.style.color = "red";
+	} else if(u != username && p == password) {
+		message.innerText = "Username is wrong.";
+		message.style.color = "red";
 	} else{
-		document.getElementById("good").style.display = "block";
-		document.getElementById("good").style.color = "green";
-
-
+		message.innerText = "Username & Password are wrong.";
+		message.style.color = "red";
 	}
 }
