@@ -30,3 +30,13 @@ function removeTask(){
 	tasks.splice(taskRemove1, 1);
 	showTasks();
 }
+
+
+function highlightTask(){
+	let taskImportant = Number(prompt("Enter the task # you want to prioritze: "));
+	let taskImportant1 = taskImportant - 1;
+	let addBack = tasks[taskImportant1].style.color = "yellow";
+	tasks.splice(taskImportant1,1, addBack);
+	showTasks();
+	
+}
