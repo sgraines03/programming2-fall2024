@@ -112,3 +112,8 @@
 	flex-shrink: 2;
 	flex-grow: 1;
 }
+
+
+.clicked {
+	background-color: cadetblue;
+}
