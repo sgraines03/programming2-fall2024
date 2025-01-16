@@ -114,8 +114,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function isClicked(e) {
       let cardClicked = e.srcElement;
-      console.log(cardClicked);
+      cardClicked.classList.add("clicked");
+      let clicked = document.getElementsByClassName("clicked");
+      if (clicked.length == 2) {
+        // look for a match
+        if(isMatch(clicked[0].innerText, clicked[1].innerText))
+          clicked[0].style.backgroundColor = "green";
+      }
     }
+
+    function isMatch(item1, item2) {
+      for (let i = 0; i < Object.keys(pairs).length; i++) {
+        if (item1 == pairs[i].problem && item2 == pairs[i].match) {
+          return true;
+        }
+        if (item2 == pairs[i].problem && item2 == pairs[i].match) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
   shuffleAssign();
 });

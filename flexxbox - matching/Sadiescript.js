@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
+//document.addEventListener("DOMContentLoaded", () => {
+//list of all the possible pairs
 	const pairs = [
 		{ problem: "1 x 1", match: "1" },
 		{ problem: "1 x 2", match: "2" },
@@ -113,15 +114,40 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 		
 	}
+// click only 2 cards at a time if its a pair it become light green if not back to normal
 	function isClicked(e) {
 		let cardClicked = e.srcElement;
+		cardClicked.classList.remove("facedown");
 		cardClicked.classList.add("clicked");
-		let numClicked = document.getElementsByClassName("clicked").length;
-		if(numClicked == 2){
+		let clicked = document.getElementsByClassName("clicked");
+		if(clicked.length == 2){
+			console.log(clicked[0].innerText);
+			console.log(clicked[1].innerText);
 			// look for a match
+			if(isMatch(clicked[0].innerText, clicked[1].innerText)){
+				clicked[0].style.backgroundColor = "lightgreen";
+				clicked[1].style.backgroundColor = "lightgreen";
+				
+				clicked[0].disabled = "true";
+				clicked[1].disabled = "true";
+				
+				clicked[0].classList.remove("clicked");
+				clicked[0].classList.remove("clicked");
+
+			} else {
+				setTimeout(function() {
+					clicked[0].classList.add("facedown");
+					clicked[1].classList.add("facedown");
+					clicked[0].classList.remove("clicked");
+					clicked[0].classList.remove("clicked");
+				}, 1000);
+				
+			}
+		
 		}
 	}
-	
+// checks is the two cards clicked are a pair if it goes light green if not back to normal
+
 	function isMatch(item1, item2){
 		for( let i = 0; i < Object.keys(pairs).length; i++){
 			if(item1 == pairs[i].problem && item2 == pairs[i].match){
@@ -136,6 +162,81 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 	shuffleAssign();
 	
-});
+//start using (https://dev.to/walternascimentobarroso/creating-a-timer-with-javascript-8b7) here. Not everything in this portion of code is from the website though I changed a bunch of stuff and added stuff
+// makes a timer to count how long game takes
+let hour = 0;
+let minute = 0;
+let second = 0;
+let millisecond = 0;
+let cron;
+// function to start timer add this function to onclick in html to make timer start when start button pressed
+function start() {
+  clearInterval(cron);
+  cron = setInterval(timer, 10);
+  for ( let i = 0; i < cards.length; i++){
+	  cards[i].disabled = false;
+	  cards[i].classList.add("facedown");
+	
+}}
+// function to end timer and disable cards when clicked add this function to onclick in html to make timer end and cards be disabled when end button pressed
 
-// for i
+
+function end() {
+  clearInterval(cron);
+  for ( let i = 0; i < cards.length; i++){
+	  cards[i].disabled = true;
+  }
+}
+ // function to clear timer (so back to zeros) add this function to onclick in html to clear timer when clear button pressed
+function clearTimer() {
+  hour = 0;
+  minute = 0;
+  second = 0;
+  millisecond = 0;
+
+  document.getElementById('hour').innerText = '00';
+  document.getElementById('minute').innerText = '00';
+  document.getElementById('second').innerText = '00';
+  document.getElementById('millisecond').innerText = '000';
+}
+
+function timer() {
+  if ((millisecond += 10) === 1000) {
+    millisecond = 0;
+    second++;
+  }
+  if (second === 60) {
+    second = 0;
+    minute++;
+  }
+  if (minute === 60) {
+    minute = 0;
+    hour++;
+  }
+  document.getElementById('hour').innerText = returnData(hour);
+  document.getElementById('minute').innerText = returnData(minute);
+  document.getElementById('second').innerText = returnData(second);
+  document.getElementById('millisecond').innerText = returnData(millisecond);
+}
+
+function returnData(input) {
+  return input >= 10 ? input : `0${input}`;
+}
+
+//stop using (https://dev.to/walternascimentobarroso/creating-a-timer-with-javascript-8b7) here. Not everything in this portion of code is from the website though I changed a bunch of stuff and added stuff
+// function to clear cards add this function to onclick in html to make the cards blank when pressed untill start button pressed when clear button pressed
+function clearCards() {
+  const cards = document.getElementsByClassName("contentofcards");
+    for (let card of cards) {
+    card.innerText = "";
+    card.style.backgroundColor = "";
+    card.classList.remove("clicked");
+    card.onclick = null;
+	for ( let i = 0; i < cards.length; i++){
+	  cards[i].disabled = true;
+	  cards[i].classList.add("facedown");
+
+  }}}
+
+
+		

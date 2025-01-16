@@ -6,92 +6,54 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>3rd grade matching game</title>
 		<link rel="stylesheet" href="styles.css" />
-		<script src="Sadiescript.js"></script>
-
-	</head>
+		<script src="Sadiescript.js" defer></script>
+</head>
 	<body id="body">
-		<button id="exitbutton" onclick="location.href='Start.html';">⬅exit</button>
 		<h2 id="header">Mutiplication Match</h2>
+		<!--start using (https://dev.to/walternascimentobarroso/creating-a-timer-with-javascript-8b7) here. Not everything in this portion of code is from the website though I changed a bunch of stuff and added stuff-->
+		<form name="form_main">
+			<div  id = "startendbuttonstimesize">
+			  <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>:<span id="millisecond">000</span>
+				<br />
+				<button id="starttimer" onclick="start(); shuffleAssign();" type="button">Start</button>
+				<button id="endgame" onclick="end()" type="button">End</button>
+				<button id="clearbutton" onclick="clearTimer(); clearCards(); end();" type="button">Clear</button>
+	 		</div>
+		</form>
+		<!--stop using (https://dev.to/walternascimentobarroso/creating-a-timer-with-javascript-8b7) here. Not everything in this portion of code is from the website though I changed a bunch of stuff and added stuff-->
+		<!--lay out of cards-->
 		<div id="flex-container">
 			<div class="column">
-				<div class="contentofcards column-cards">1</div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
+				<button class="contentofcards column-cards facedown dimond"></button>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
 			</div>
 			<div class="column">
-				<div class="contentofcards column-cards">2</div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
 			</div>
 			<div class="column">
-				<div class="contentofcards column-cards">3</div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
 			</div>
 			<div class="column">
-				<div class="contentofcards column-cards">4</div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-			</div>
-			<div class="column">
-				<div class="contentofcards column-cards">5</div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-			</div>
-			<div class="column">
-				<div class="contentofcards column-cards">6</div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-			</div>
-			<div class="column">
-				<div class="contentofcards column-cards">7</div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-			</div>
-			<div class="column">
-				<div class="contentofcards column-cards">8</div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-			</div>
-			<div class="column">
-				<div class="contentofcards column-cards">9</div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-			</div>
-			<div class="column">
-				<div class="contentofcards column-cards">10</div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
-				<div class="contentofcards column-cards"></div>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
+				<button class="contentofcards column-cards facedown"></button>
 			</div>
 		</div>
 	</body>

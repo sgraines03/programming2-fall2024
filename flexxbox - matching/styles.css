@@ -15,17 +15,16 @@
 	height: 100%;
 	width: 100%;
 	background-color: lightgray;
-	border-radius: 5px;
-	text-align: center;
+	border-radius: 7px;
+	align-items: center;
 	margin: 2px;
 	flex-shrink: 2;
 	flex-grow: 1;
 	flex-basis: 50px;
-	
 }
 
 .column-cards:hover {
-	background-color: darkgray;
+	background-color: #79009d;
 }
 
 .column {
@@ -33,7 +32,6 @@
 	flex-direction: column;
 	align-items: flex-start;
 	flex-grow: 1;
-	/*flex-basis: 0;*/
 	width: 100%;
 	height: calc(100vh - 90px);
 }
@@ -59,39 +57,9 @@
 	flex-grow: 1;
 }
 
-#exitbutton {
-	background-color: red;
-	border-radius: 5px;
-}
-
-#exitbutton:hover {
-	background-color: darkred;
-}
 
 
-#startbutton{
-	background-color: lawngreen;
-	display: flex;
-	border-radius: 15px;
-	height: fit-content;
-	width: 70%;
-	align-items: center;
-	justify-content: space-evenly;
-	font-size: 250%;
-	flex-shrink: 2;
-	flex-grow: 1;
 
-}
-
-#startwords {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 300%;
-  flex-shrink: 2;
-  flex-grow: 1;
-
-}
 
 #body2 {
     margin: 0;
@@ -101,7 +69,6 @@
 }
 
 
-#startbutton:hover {background-color: #00f009}
 
 
 .contentofcards{
@@ -111,9 +78,82 @@
 	justify-content: center;
 	flex-shrink: 2;
 	flex-grow: 1;
+	font-weight: bold;
+	font-size: 25px;
 }
 
 
 .clicked {
-	background-color: cadetblue;
+  background-color: cadetblue;
+}
+
+
+
+
+#starttimer {
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 2; 
+	align-items: center;
+	justify-content:center; 
+	width: fit-content;
+	height: fit-content;
+	font-size: 14px;
+	background-color: #2ae000;
+	border-radius: 7px;
+}
+
+#endgame {
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 2; 
+	align-items: center;
+	justify-content:center; 
+	width: fit-content;
+	height: fit-content;
+	font-size: 14px;
+	background-color: #e01b1b;
+	border-radius: 7px;
+
+
+
+}
+
+#clearbutton{
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 2; 
+	align-items: center;
+	justify-content:center; 
+	width: fit-content;
+	height: fit-content;
+	font-size: 14px;
+	background-color: #1ffeff;
+	border-radius: 7px;
+
+
+}
+
+
+#startendbuttonstimesize{
+	display: flex;
+	font-size: 125%;
+	flex-shrink: 2;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: center;
+
+	
+}
+
+.facedownend{
+	content: "X";
+	content-visibility: visible;
+	font-size: 20px;
+	color:red;
+}
+.facedown{
+	color: transparent;
+	background-color: mediumpurple;
+	
 }
